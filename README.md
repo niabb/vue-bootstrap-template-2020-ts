@@ -6,12 +6,11 @@ Ready to use template for FE application, using:
 
 ## Create a fork of this repository
 ```
-git clone https://github.com/niabb/vue-bootstrap-template.git newRepo
+git clone git@github.com:niabb/vue-bootstrap-template-2020.git newRepo
 cd newRepo
-git remote set-url origin https://github.com/userName/newRepo
-git remote add upstream https://github.com/niabb/vue-bootstrap-template
+git remote set-url origin git@github.com:niabb/newRepo.git
+git remote add upstream git@github.com:niabb/vue-bootstrap-template-2020.git
 git push origin master
-git push --all
 ```
 
 ## Project setup
