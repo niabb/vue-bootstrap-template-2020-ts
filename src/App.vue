@@ -43,7 +43,6 @@ export default {
   computed: {
     userName() {
       const user = this.$auth.user();
-      console.log(user);
       if (user) {
         return user.username;
       }

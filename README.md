@@ -3,7 +3,8 @@ Ready to use template for FE application, using:
 - [Vue.js v2](https://vuejs.org/)
 - [BootstrapVue](https://bootstrap-vue.org/)
 - [vue-axios](https://github.com/imcvampire/vue-axios#readme) for HTTP requests
-- [Vue-auth](websanova.com/docs/vue-auth) to handle authentication and authorization, ready to use with [express-openapi-mongoose-template](https://github.com/niabb/express-openapi-mongoose-template)
+- [vue-auth](websanova.com/docs/vue-auth) to handle authentication and authorization, ready to use with [express-openapi-mongoose-template](https://github.com/niabb/express-openapi-mongoose-template)
+- [vue-gtag](https://matteo-gabriele.gitbook.io/vue-gtag/) for Google Analytics tracking
 
 ## Create a fork of this repository
 ```
@@ -16,6 +17,7 @@ git push origin master
 
 ## Project setup
 ```
+cp src/config.default.js src/config.js
 npm ci
 ```
 
