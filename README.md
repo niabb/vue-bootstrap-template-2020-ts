@@ -1,8 +1,9 @@
 # vue-boostrap-template-2020
 Ready to use template for FE application, using:
-- Vue
-- BootstrapVue
-- Axios for HTTP requests
+- [Vue.js v2](https://vuejs.org/)
+- [BootstrapVue](https://bootstrap-vue.org/)
+- [vue-axios](https://github.com/imcvampire/vue-axios#readme) for HTTP requests
+- [Vue-auth](websanova.com/docs/vue-auth) to handle authentication and authorization, ready to use with [express-openapi-mongoose-template](https://github.com/niabb/express-openapi-mongoose-template)
 
 ## Create a fork of this repository
 ```
@@ -15,7 +16,7 @@ git push origin master
 
 ## Project setup
 ```
-npm install
+npm ci
 ```
 
 ### Compiles and hot-reloads for development
@@ -38,5 +39,7 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Upgrade all dependencies
+```
+npm run upgrade-dependencies
+```

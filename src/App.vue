@@ -12,12 +12,13 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-              <b-nav-item-dropdown right>
+            <b-nav-item-dropdown v-if="$auth.check()" right>
               <!-- Using 'button-content' slot -->
-              <template slot="button-content"><em>User</em></template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+              <template slot="button-content"><em>{{userName}}</em></template>
+              <b-dropdown-item v-if="$auth.check('admin')" to="/admin">Admin</b-dropdown-item>
+              <b-dropdown-item @click="logout">Logout</b-dropdown-item>
             </b-nav-item-dropdown>
+            <b-nav-item v-if="!$auth.check()" to="/login">Login</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -27,6 +28,39 @@
     </b-container>
   </div>
 </template>
+<script>
+import jwtDecode from 'jwt-decode';
+
+export default {
+  created() {
+    if (this.$auth.token()) {
+      const decodedToken = jwtDecode(this.$auth.token());
+      if (decodedToken) {
+        this.$auth.user(decodedToken);
+      }
+    }
+  },
+  computed: {
+    userName() {
+      const user = this.$auth.user();
+      console.log(user);
+      if (user) {
+        return user.username;
+      }
+      return '';
+    },
+  },
+  methods: {
+    logout() {
+      this.$auth
+        .logout({
+          makeRequest: false,
+          redirect: { name: 'Home' },
+        });
+    },
+  },
+};
+</script>
 
 <style>
 </style>
