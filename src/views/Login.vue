@@ -3,30 +3,28 @@
     <b-form @submit="onSubmit">
       <b-form-group
         id="input-group-1"
-        label="Login:"
+        :label="$t('Login.username')+':'"
         label-for="input-1"
       >
         <b-form-input
           id="input-1"
           v-model="form.username"
           required
-          placeholder="Enter login"
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="Password:" label-for="input-2">
+      <b-form-group id="input-group-2" :label="$t('Login.password')+':'" label-for="input-2">
         <b-form-input
           id="input-2"
           v-model="form.password"
           type="password"
           required
-          placeholder="Password"
         ></b-form-input>
       </b-form-group>
       <b-alert v-model="failed" variant="danger">
-        Wrong username or password
+        {{$t('Login.authenticationFailed')}}
       </b-alert>
-      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="submit" variant="primary">{{$t('Login.submit')}}</b-button>
     </b-form>
   </b-overlay>
 </template>

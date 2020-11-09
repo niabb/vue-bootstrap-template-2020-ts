@@ -5,6 +5,7 @@ Ready to use template for FE application, using:
 - [vue-axios](https://github.com/imcvampire/vue-axios#readme) for HTTP requests
 - [vue-auth](websanova.com/docs/vue-auth) to handle authentication and authorization, ready to use with [express-openapi-mongoose-template](https://github.com/niabb/express-openapi-mongoose-template)
 - [vue-gtag](https://matteo-gabriele.gitbook.io/vue-gtag/) for Google Analytics tracking
+- [vue-i18n](https://kazupon.github.io/vue-i18n/) for internationalization
 
 ## Create a fork of this repository
 ```
