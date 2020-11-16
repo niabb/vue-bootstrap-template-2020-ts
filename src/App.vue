@@ -30,6 +30,9 @@
               <b-dropdown-item v-if="$auth.check('admin')" to="/admin">
                 {{$t('admin')}}
               </b-dropdown-item>
+              <b-dropdown-item to="/profile">
+                {{$t('profile')}}
+              </b-dropdown-item>
               <b-dropdown-item @click="logout">{{$t('logout')}}</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item v-if="!$auth.check()" to="/login">{{$t('login')}}</b-nav-item>
@@ -43,17 +46,8 @@
   </div>
 </template>
 <script>
-import jwtDecode from 'jwt-decode';
 
 export default {
-  created() {
-    if (this.$auth.token()) {
-      const decodedToken = jwtDecode(this.$auth.token());
-      if (decodedToken) {
-        this.$auth.user(decodedToken);
-      }
-    }
-  },
   computed: {
     userName() {
       const user = this.$auth.user();

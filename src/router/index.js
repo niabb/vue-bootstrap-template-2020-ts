@@ -17,6 +17,12 @@ const routes = [
     meta: { auth: 'admin' },
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: () => import('../views/Profile.vue'),
+    meta: { auth: true },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),
@@ -24,12 +30,14 @@ const routes = [
   {
     path: '/403',
     name: '403',
-    component: () => import('../views/403.vue'),
+    component: () => import('../views/Error/Error403.vue'),
   },
 ];
 
 const router = new VueRouter({
   routes,
 });
+
+Vue.router = router;
 
 export default router;

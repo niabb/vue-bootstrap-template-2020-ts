@@ -3,6 +3,7 @@ const locales = {
   login: 'Login',
   logout: 'Logout',
   admin: 'Admin',
+  profile: 'Profile',
   Login: {
     username: 'Login',
     password: 'Password',
