@@ -8,8 +8,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 import router from './router';
 
+// The import order below imports, as auth needs http to be already setup, and interceptors needs
+// both http and auth
 import './http';
 import './auth';
+import './http/interceptors';
 import App from './App.vue';
 import store from './store';
 import config from './config';
