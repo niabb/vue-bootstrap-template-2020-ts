@@ -1,6 +1,6 @@
 <template>
   <b-overlay :show="showOverlay">
-    <b-form @submit="onSubmit">
+    <b-form>
       <b-form-group
         id="input-group-1"
         :label="$t('Login.username')+':'"
@@ -24,7 +24,7 @@
       <b-alert v-model="failed" variant="danger">
         {{$t('Login.authenticationFailed')}}
       </b-alert>
-      <b-button type="submit" variant="primary">{{$t('Login.submit')}}</b-button>
+      <b-button @click="onSubmit" variant="primary">{{$t('Login.submit')}}</b-button>
     </b-form>
   </b-overlay>
 </template>
