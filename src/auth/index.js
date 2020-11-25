@@ -1,28 +1,38 @@
 import Vue from 'vue';
-import VueAuth from '@websanova/vue-auth';
 import jwtDecode from 'jwt-decode';
 
-import httpAxios from '@websanova/vue-auth/dist/drivers/http/axios.1.x.esm';
-import routerVueRouter from '@websanova/vue-auth/dist/drivers/router/vue-router.2.x.esm';
+import VueAuth from '@websanova/vue-auth/dist/v2/vue-auth.common';
+import driverHttpAxios from '@websanova/vue-auth/dist/drivers/http/axios.1.x';
+// import driverHttpVueResource from '@websanova/vue-auth/dist/drivers/http/vue-resource.1.x.js';
+import driverRouterVueRouter from '@websanova/vue-auth/dist/drivers/router/vue-router.2.x';
 
 const configuration = {
-  auth: {
-    request(req, token) {
-      this.http.setHeaders.call(this, req, {
-        Authorization: `Bearer ${token}`,
-      });
-    },
-    response(res) {
-      const token = res.data ? res.data.token : '';
-      return token;
-    },
+  plugins: {
+    http: Vue.axios,
+    router: Vue.router,
   },
-  http: httpAxios,
-  router: routerVueRouter,
-  rolesKey: 'roles',
-  loginData: { url: 'user/login', fetchUser: false, staySignedIn: true },
-  refreshData: { enabled: false },
-  fetchData: { enabled: false },
+  drivers: {
+    auth: {
+      request(req, token) {
+        this.http.setHeaders.call(this, req, {
+          Authorization: `Bearer ${token}`,
+        });
+      },
+      response(res) {
+        const token = res.data ? res.data.token : '';
+        return token;
+      },
+    },
+    http: driverHttpAxios, // Axios
+    router: driverRouterVueRouter,
+
+  },
+  options: {
+    rolesKey: 'roles',
+    loginData: { url: 'user/login', fetchUser: false, staySignedIn: true },
+    refreshData: { enabled: false },
+    fetchData: { enabled: false },
+  },
 };
 
 Vue.use(VueAuth, configuration);
