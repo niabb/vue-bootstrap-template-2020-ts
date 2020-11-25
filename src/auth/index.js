@@ -14,7 +14,7 @@ const configuration = {
   drivers: {
     auth: {
       request(req, token) {
-        this.http.setHeaders.call(this, req, {
+        driverHttpAxios.setHeaders.call(this, req, {
           Authorization: `Bearer ${token}`,
         });
       },
