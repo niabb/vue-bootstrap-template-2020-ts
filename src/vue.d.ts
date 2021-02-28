@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import {VueAuth} from '@websanova/vue-auth';
+import { VueAuth } from '@websanova/vue-auth';
 
 declare module 'vue/types/vue' {
   interface VueConstructor {

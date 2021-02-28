@@ -5,14 +5,14 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    '@vue/airbnb',
     '@vue/typescript/recommended',
+    '@vue/airbnb',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
   ],
   parserOptions: {
-    parser: 'babel-eslint',
+    ecmaVersion: 2020,
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

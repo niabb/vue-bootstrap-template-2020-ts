@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Vue from 'vue';
 import jwtDecode from 'jwt-decode';
 
