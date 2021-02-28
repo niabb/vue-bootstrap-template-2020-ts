@@ -1,6 +1,7 @@
-# vue-boostrap-template-2020
+# vue-boostrap-template-2020-ts
 Ready to use template for FE application, using:
 - [Vue.js v2](https://vuejs.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [BootstrapVue](https://bootstrap-vue.org/)
 - [vue-axios](https://github.com/imcvampire/vue-axios#readme) for HTTP requests
 - [vue-auth](websanova.com/docs/vue-auth) to handle authentication and authorization, ready to use with [express-openapi-mongoose-template](https://github.com/niabb/express-openapi-mongoose-template)
@@ -9,10 +10,10 @@ Ready to use template for FE application, using:
 
 ## Create a fork of this repository
 ```
-git clone git@github.com:niabb/vue-bootstrap-template-2020.git newRepo
+git clone git@github.com:niabb/vue-bootstrap-template-2020-ts.git newRepo
 cd newRepo
 git remote set-url origin git@github.com:niabb/newRepo.git
-git remote add upstream git@github.com:niabb/vue-bootstrap-template-2020.git
+git remote add upstream git@github.com:niabb/vue-bootstrap-template-2020-ts.git
 git push origin master
 ```
 
