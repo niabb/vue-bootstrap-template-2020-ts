@@ -29,10 +29,11 @@
   </b-overlay>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import jwtDecode from 'jwt-decode';
 
-export default {
+export default Vue.extend({
   name: 'Login',
   data: () => ({
     showOverlay: false,
@@ -62,5 +63,5 @@ export default {
       }
     },
   },
-};
+});
 </script>

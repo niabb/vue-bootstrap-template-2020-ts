@@ -12,9 +12,10 @@
   </b-overlay>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   name: 'Profile',
   data() {
     return {
@@ -37,5 +38,5 @@ export default {
       this.showOverlay = false;
     },
   },
-};
+});
 </script>
