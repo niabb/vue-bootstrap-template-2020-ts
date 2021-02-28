@@ -45,9 +45,10 @@
     </b-container>
   </div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 
-export default {
+export default Vue.extend({
   computed: {
     userName() {
       const user = this.$auth.user();
@@ -65,11 +66,11 @@ export default {
           redirect: { name: 'Home' },
         });
     },
-    changeLanguage(lang) {
+    changeLanguage(lang:string) {
       this.$i18n.locale = lang;
     },
   },
-};
+});
 </script>
 
 <style>
