@@ -7,6 +7,9 @@ module.exports = {
     'plugin:vue/essential',
     '@vue/airbnb',
     '@vue/typescript/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
   ],
   parserOptions: {
     parser: 'babel-eslint',
